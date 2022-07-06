@@ -1,28 +1,37 @@
 package com.animalshelter.demo.animal;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-@Table(name="animalDetails")
-public class animalEntity {
+@Table(name="animaldetails")
+public class Animal {
 
     @Id
+    @SequenceGenerator(
+            name="animal_sequence",
+            sequenceName = "animal_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy=SEQUENCE,
+            generator="animal_sequence"
+    )
     private Long id;
     private String name;
     private String species;
 
-    public animalEntity(Long id, String name, String species) {
+    public Animal(Long id, String name, String species) {
         this.id = id;
         this.name = name;
         this.species = species;
     }
 
-    public animalEntity() {
+    public Animal() {
     }
 
-    public animalEntity(String name, String species) {
+    public Animal(String name, String species) {
         this.name = name;
         this.species = species;
     }
