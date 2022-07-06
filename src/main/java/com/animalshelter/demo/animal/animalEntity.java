@@ -1,6 +1,14 @@
 package com.animalshelter.demo.animal;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="animalDetails")
 public class animalEntity {
+
+    @Id
     private Long id;
     private String name;
     private String species;
