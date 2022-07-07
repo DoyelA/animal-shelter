@@ -22,7 +22,7 @@ public class AnimalConfig {
                         "Magic",
                         "Beagle"
                 );
-            repository.saveAll(List.of(lola));
+            repository.saveAll(List.of(lola,magic));
         };
     }
 }
